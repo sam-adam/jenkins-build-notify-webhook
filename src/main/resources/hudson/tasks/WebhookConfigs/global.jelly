@@ -1,0 +1,20 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:section title="${%Webhook Configurations}">
+    <f:repeatable field="webhookConfigs" property="webhookConfigs">
+      <f:entry title="${%Label}" field="label">
+        <f:textbox checkMethod="post" />
+      </f:entry>
+      <f:entry title="${%URL}" field="url">
+        <f:textbox />
+      </f:entry>
+      <f:entry title="${%Bearer Token (Optional)}" field="bearerToken">
+        <f:textbox />
+      </f:entry>
+      <!-- Delete button -->
+      <f:entry>
+        <f:repeatableDeleteButton/>
+      </f:entry>
+    </f:repeatable>
+  </f:section>
+</j:jelly>
